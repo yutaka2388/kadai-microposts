@@ -2,7 +2,7 @@
   <% microposts.each do |micropost| %>
     <li class="media">
       <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(micropost.user, options = { size: 50 }) %>" alt="">
+      <img class="media-object img-rounded" src="<%= gravatar_url(micropost.user, options = { size: 50 }) %>" alt="">
       </div>
       <div class="media-body">
         <div>
@@ -15,6 +15,7 @@
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
+            <%= link_to "お気に入り登録", micropost, method: :like, data: { confirm: "お気に入り登録しますか?" }, class: 'btn btn-primary btn-xs' %>
         </div>
       </div>
     </li>

@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: microposts_development
+  database: tasks_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -47,8 +47,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
+development:
   <<: *default
+  database: microposts_development
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: microposts_production
   username: microposts
   password: <%= ENV['MICROPOSTS_DATABASE_PASSWORD'] %>

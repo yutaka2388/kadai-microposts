@@ -9,6 +9,10 @@
       </div>
     </div>
     <%= render 'relationships/follow_button', user: @user %>
+        <%= form_for :icon, url: 'icons/create'  do |f| %>
+  <p><%=f.label "アイコンをアップロード" %><br><%= f.file_field :image %></p>
+  <p><%= f.submit value: 'アイコンを変更する' %></p>
+   <% end %>
   </aside>
   <div class="col-xs-8">
     <ul class="nav nav-tabs nav-justified">

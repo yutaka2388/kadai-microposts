@@ -1,0 +1,10 @@
+<% @icons.each do |icon| %>
+  <p>
+    <%= image_tag icon.image.url %>
+  </p>
+<% end %>
+<hr>
+<%= form_for :icon, url: 'icons/create'  do |f| %>
+  <p><%=f.label "画像をアップロード" %><br><%= f.file_field :image %></p>
+  <p><%= f.submit value: '投稿' %></p>
+<% end %>

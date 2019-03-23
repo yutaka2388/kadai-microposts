@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   get 'relationships', to: 'users#show'
+
+  get 'icons', to: 'icons#show'
+  post 'users/icons/create', to: 'icons#create'
   
   resources :users, only: [:index, :show, :new, :create] do
     member do
@@ -22,5 +25,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   
   resources :favorites, only: [:create, :destroy]
+  
+
   
 end
